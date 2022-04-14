@@ -27,4 +27,4 @@ insert into garment(description, img, season, gender, price) values ('Red Shirt'
 insert into garment(description, img, season, gender, price) values ('Long Sleeve Top(brown & lime)', 'womans-128x128-455145.png', 'All Seasons', 'Female', '299.99');
 insert into garment(description, img, season, gender, price) values ('Lime Dress(Short)', 'womans-128x128-455146.png', 'Summer', 'Female', '599.99');
 insert into garment(description, img, season, gender, price) values ('Short Sleeve Top(Red)', 'womans-128x128-455147.png', 'Summer', 'Female', '199.99');
-insert into garment(description, img, season, gender, price) values ('Beach Shorts', 'womens-128x128-455148.png', 'Summer', 'Male', '79.99');
+insert into garment(description, img, season, gender, price) values ('Beach Shorts', 'womens-128x128-4551.png','Summer', 'Male', '79.99');

@@ -5,8 +5,8 @@ env:
 node_js:
   - 12
 before_script:
-  - psql -c 'create database garment_app;' -U postgres
-  - psql -U postgres -d psql-refresher-workshop -a -f sql/garment.sql
-  - psql -U postgres -d psql-refresher-workshop -a -f sql/data.sql
+  - psql -c 'create database garment_app;' -U kimfr
+  - psql -U kimfr -d psql-refresher-workshop -a -f sql/garment.sql
+  - psql -U kimfr -d psql-refresher-workshop -a -f sql/data.sql
 services:
   - postgresql;

@@ -5,7 +5,7 @@ const fs = require("fs");
 require('dotenv').config()
 
 describe('As part of the sql refresh workshop', () => {
-	
+
 	const DATABASE_URL = process.env.DATABASE_URL;
 
 	const pgp = PgPromise({});
@@ -59,9 +59,9 @@ describe('As part of the sql refresh workshop', () => {
 	it('you should be able to change a given Male garment to a Unisex garment', async () => {
 
 		// use db.one with an update sql statement
-		db.one('update garment set gender = $1 where description = $2', ["Unisex", "Red hooded jacket"]) 
+		db.one('update garment set gender = $1 where description = $2', ["Unisex", "Red hooded jacket"])
 		// write your code above this line
-		
+
 		const gender_sql = 'select gender from garment where description = $1'
 		const gender = await db.one(gender_sql, ['Red hooded jacket'], r => r.gender);
 		assert.equal('Unisex', gender);
@@ -95,19 +95,20 @@ describe('As part of the sql refresh workshop', () => {
 		// write your code above this line
 
 		const expectedResult = [
-			  {
-			    count: '15',
-			    gender: 'Male'
-			  },
-			  {
-			    count: '16',
-			    gender: 'Female'
-			  },
-			  {
-			    count: '4',
-			    gender: 'Unisex'
-			  }
-			]
+			{
+				count: '4',
+				gender: 'Unisex'
+			},
+			{
+				count: '16',
+				gender: 'Female'
+			},
+			{
+				count: '15',
+				gender: 'Male'
+			},
+
+		]
 		assert.deepStrictEqual(expectedResult, garmentsGrouped)
 	});
 
@@ -124,7 +125,7 @@ describe('As part of the sql refresh workshop', () => {
 	});
 
 
-	
+
 	after(async () => {
 		db.$pool.end();
 	});
